@@ -47,6 +47,15 @@
 
 </script>
 
-<p>ok if it's updated you should see this3</p>
+<p>ok if it's updated you should see this4</p>
+
+<p id="demo3"></p>
+<button onclick="getLocation3()">Get Location3</button>
+
+<script>
+    function getLocation3() {
+        document.getElementById("demo3").innerHTML = navigator.geolocation.getCurrentPosition().coords.latitude.toString();
+    }
+</script>
 </body>
 </html>
