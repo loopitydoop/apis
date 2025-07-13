@@ -34,7 +34,7 @@
     const y = document.getElementById("demo2");
 
     function getLocation2() {
-        y.innerHTML = toString(navigator.geolocation.getCurrentPosition());
+        y.innerHTML = toString(navigator.geolocation.getCurrentPosition(position.coords.latitude));
     }
 
     getLocation2();
