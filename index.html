@@ -38,12 +38,15 @@
         navigator.geolocation.getCurrentPosition(showPosition2);
     }
 
-    function showPosition2(CurrentPositionObject) {
-    y.innerText = CurrentPositionObject.toString();
+    function showPosition2(geolocationPositionObject) {
+    y.innerHTML = "GeolocationPosition Object: " + geolocationPositionObject.toString() + "<br>" +
+    "Latitude: " + GeolocationPositionObject.coords.latitude.toString() + "<br>"
+    "Longitude: " + GeolocationPositionObject.coords.longitude.toString() + "<br>"
+    "Timestamp: " + GeolocationPositionObject.timestamp.toString() + "<br>";
     }
 
 </script>
 
-<p>ok if it's updated you should see this9</p>
+<p>ok if it's updated you should see this</p>
 </body>
 </html>
