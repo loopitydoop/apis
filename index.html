@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>APIs</title>
 </head>
 <body>
+<p>Click button to get your coordinates (don't worry I'm not actually storing your location anywhere)</p>
 
+<button onclick="getLocation()">Get Location</button>
+
+<p id="demo"></p>
+
+<script>
+    const x = document.getElementById("demo");
+
+    function getLocation() {
+        try {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }
+    }
+
+    function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+    }
+</script>
 </body>
 </html>
