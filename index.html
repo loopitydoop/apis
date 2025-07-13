@@ -9,10 +9,10 @@
 
 <button onclick="getLocation()">Get Location</button>
 
-<p id="demo"></p>
+<p id="demo1"></p>
 
 <script>
-    const x = document.getElementById("demo");
+    const x = document.getElementById("demo1");
 
     function getLocation() {
         try {
@@ -25,6 +25,16 @@
     function showPosition(position) {
         x.innerHTML = "Latitude: " + position.coords.latitude +
         "<br>Longitude: " + position.coords.longitude;
+    }
+</script>
+
+<p id="demo2"></p>
+
+<script>
+    const y = document.getElementById("demo2");
+
+    function getLocation2() {
+        y.innerHTML = String(navigator.geolocation.getCurrentPosition());
     }
 </script>
 </body>
