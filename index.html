@@ -16,7 +16,9 @@
 
     function getLocation() {
         try {
-            navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(showPosition);
+        } catch(err) {
+        x.innerHTML = err;
         }
     }
 
