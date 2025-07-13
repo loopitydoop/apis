@@ -53,8 +53,26 @@
 <button onclick="getLocation3()">Get Location3</button>
 
 <script>
+    /* this is an example of how not to use the geolocation API's getCurrentPosition() method.
+    You MUST use a callback function, not just try to add on more properties after the method */
     function getLocation3() {
         document.getElementById("demo3").innerHTML = navigator.geolocation.getCurrentPosition().coords.latitude.toString();
+    }
+</script>
+
+<p id="demo4"></p>
+<button onclick="getLocation4()">Get Location3</button>
+
+<script>
+    function passthrough(input) {
+        return input
+    }
+
+    /* and this is a test to see if you can put a sort of pass-through function as the callback function
+     so that you can add on more properties after the getCurrentPosition() method*/
+
+    function getLocation4() {
+        document.getElementById("demo4").innerHTML = navigator.geolocation.getCurrentPosition(passthrough).coords.latitude.toString();
     }
 </script>
 </body>
