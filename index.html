@@ -87,7 +87,7 @@
 <script>
     const y = document.getElementById("demo5");
 
-    //* these functions serve to get a geolocationPositionObjection from navigator.geolocation.getCurrentPosition() *//
+    /* these functions serve to get a geolocationPositionObjection from navigator.geolocation.getCurrentPosition() */
 
     function getLocation5() {
         geolocationPositionObject = navigator.geolocation.getCurrentPosition(passthrough, showError5);
@@ -102,7 +102,7 @@
         y.innerHTML = "Hey, you're supposed to give Location Access for this to work properly!";
     }
 
-    //* this is a test function to display the geolocationPostionObject *//
+    /* this is a test function to display the geolocationPostionObject */
     function displayThing(string) {
         y.innerHTML = string.toString();
     }
@@ -111,9 +111,24 @@
         currentWeather = https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=a3ce82c07921df5ff8127fc77507be4d;
         return currentWeather;
     }
-
-
 </script>
+
+<p id="demo6"></p>
+<button onclick="displayThing2(testFunction())">Find the weather in a given location</button>
+
+<script>
+    const y = document.getElementById("demo6");
+
+    function displayThing2(string) {
+        y.innerHTML = string.toString();
+    }
+
+    function testFunction() {
+        string = "potato";
+        return string;
+    }
+</script>
+
 
 </body>
 </html>
