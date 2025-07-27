@@ -81,7 +81,7 @@
     /* the passthrough function doesn't seem to work. I think you should just use callback functions like normal people, okay? */
 </script>
 
-<p id="demo5">update21</p>
+<p id="demo5">update22</p>
 <button onclick="getLocation5a()">Find the weather in a given location</button>
 
 <script>
@@ -105,10 +105,6 @@
             return locationPromise = new Promise((resolve, reject) =>  {
                 navigator.geolocation.getCurrentPosition(resolve, reject);
             });
-
-            let function reject() {
-                return "location access was denied!";
-            }
         }
 
         getPosition()
