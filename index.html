@@ -81,12 +81,14 @@
     /* the passthrough function doesn't seem to work. I think you should just use callback functions like normal people, okay? */
 </script>
 
-<p id="demo5">update10</p>
+<p id="demo5">update11</p>
 <button onclick="overwriteDemo5Text()">Find the weather in a given location</button>
 
 <script>
+    const demo5Ref = document.getElementById("demo5");
+
     function overwriteDemo5Text() {
-        document.getElementById("demo5").innerHTML = "testing one two three";
+        demo5Ref.innerHTML = "testing one two three";
     }
 </script>
 
