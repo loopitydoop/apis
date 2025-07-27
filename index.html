@@ -81,7 +81,7 @@
     /* the passthrough function doesn't seem to work. I think you should just use callback functions like normal people, okay? */
 </script>
 
-<p id="demo5">update15</p>
+<p id="demo5">update16</p>
 <button onclick="demo5Displayer(getLocation5())">Find the weather in a given location</button>
 
 <script>
@@ -95,13 +95,13 @@
         demo5Ref.innerHTML = string;
     }
 
-    function passthrough(input) {
-        return input;
+    function passthrough(position) {
+        geolocationPositionObject = position;
     }
 
     function getLocation5() {
-        geolocationPositionObject = navigator.geolocation.getCurrentPosition(passthrough);
-        return "hey this is just a test okay";
+        navigator.geolocation.getCurrentPosition(passthrough); // it seems like you can't save the geolocationPositionObject to a variable in this way... so how?
+        return geolocationPositionObject;
     }
 
 </script>
