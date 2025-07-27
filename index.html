@@ -81,8 +81,8 @@
     /* the passthrough function doesn't seem to work. I think you should just use callback functions like normal people, okay? */
 </script>
 
-<p id="demo5">update17</p>
-<button onclick="demo5Displayer(getLocation5())">Find the weather in a given location</button>
+<p id="demo5">update18</p>
+<button onclick="getLocation5a()">Find the weather in a given location</button>
 
 <script>
     const demo5Ref = document.getElementById("demo5");
@@ -97,9 +97,21 @@
 
     function getLocation5() {
         navigator.geolocation.getCurrentPosition(passthrough); // it seems like you can't save the geolocationPositionObject to a variable in this way... so how?
-        return geolocationPositionObject.toString();
+        return geolocationPositionObject;
     }
 
+    function getLocation5a() {
+        function getPosition() {
+            return locationPromise = new Promise((resolve, reject) =>  {
+                navigator.geolocation.getCurrentPosition(resolve, reject);
+            });
+        }
+
+        getPosition().then(position => {
+            demo5Ref.innerHTML = position.coords.latitude;
+        });
+    }
+    // I need to build in a Javascript promise in order to make this location getter function work properly. The navigator.geolocation.getCurrentPosition() method is the producing code, and the passthrough() is the consuming code.
 </script>
 
 <p>test2</p>
