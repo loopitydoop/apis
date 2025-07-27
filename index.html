@@ -81,11 +81,11 @@
     /* the passthrough function doesn't seem to work. I think you should just use callback functions like normal people, okay? */
 </script>
 
-<p id="demo5"></p>
+<p id="demo5">update1</p>
 <button onclick="displayThing(getLocation5())">Find the weather in a given location</button>
 
 <script>
-    const y = document.getElementById("demo5");
+    const demo5Ref = document.getElementById("demo5");
 
     /* these functions serve to get a geolocationPositionObjection from navigator.geolocation.getCurrentPosition() */
 
@@ -99,12 +99,12 @@
     }
 
     function showError5() {
-        y.innerHTML = "Hey, you're supposed to give Location Access for this to work properly!";
+        demo5Ref.innerHTML = "Hey, you're supposed to give Location Access for this to work properly!";
     }
 
     /* this is a test function to display the geolocationPostionObject */
     function displayThing(string) {
-        y.innerHTML = string.toString();
+        demo5Ref.innerHTML = string.toString();
     }
 
     getCurrentWeather() {
@@ -125,7 +125,7 @@
     }
 
     function testFunction() {
-        string = "potato";
+        string = "yes, text can be overwritten";
         return string;
     }
 </script>
