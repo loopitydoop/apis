@@ -81,40 +81,12 @@
     /* the passthrough function doesn't seem to work. I think you should just use callback functions like normal people, okay? */
 </script>
 
-<p id="demo5">update9</p>
+<p id="demo5">update10</p>
 <button onclick="overwriteDemo5Text()">Find the weather in a given location</button>
 
 <script>
-    const demo5Ref = document.getElementById("demo5");
-    demo5Ref.innerHTML = "omg I am so desperate please display this";
-
-    /* these functions serve to get a geolocationPositionObjection from navigator.geolocation.getCurrentPosition() */
-
     function overwriteDemo5Text() {
-        demo5Ref.innerHTML = "testing one two three";
-    }
-
-    function getLocation5() {
-        geolocationPositionObject = navigator.geolocation.getCurrentPosition(passthrough, showError5);
-        demo5Ref.innerHTML = "test text because I am desperate";
-    }
-
-    function passthrough(input) {
-        return input;
-    }
-
-    function showError5() {
-        demo5Ref.innerHTML = "Hey, you're supposed to give Location Access for this to work properly!";
-    }
-
-    /* this is a test function to display the geolocationPostionObject */
-    function displayThing(string) {
-        demo5Ref.innerHTML = string.toString();
-    }
-
-    function getCurrentWeather() {
-        currentWeather = https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=a3ce82c07921df5ff8127fc77507be4d;
-        return currentWeather;
+        document.getElementById("demo5").innerHTML = "testing one two three";
     }
 </script>
 
