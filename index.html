@@ -91,7 +91,7 @@
 
     function getLocation5() {
         geolocationPositionObject = navigator.geolocation.getCurrentPosition(passthrough, showError5);
-        return geolocationPositionObject.toString();
+        demo5Ref.innerHTML = geolocationPositionObject.toString();
     }
 
     function passthrough(input) {
