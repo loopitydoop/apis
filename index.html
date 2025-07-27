@@ -81,7 +81,7 @@
     /* the passthrough function doesn't seem to work. I think you should just use callback functions like normal people, okay? */
 </script>
 
-<p id="demo5">update22</p>
+<p id="demo5">update23</p>
 <button onclick="getLocation5a()">Find the weather in a given location</button>
 
 <script>
@@ -112,7 +112,7 @@
             demo5Ref.innerHTML = position;
             })
             .catch(error => {
-            demo5Ref.innerHTML = error;
+            demo5Ref.innerHTML = "location permissions were denied, or some kind of error occurred!";
             });
     }
     // I need to build in a Javascript promise in order to make this location getter function work properly. The navigator.geolocation.getCurrentPosition() method is the producing code, and the passthrough() is the consuming code.
