@@ -35,7 +35,7 @@
     const y = document.getElementById("demo2");
 
     function getLocation2() {
-        navigator.geolocation.getCurrentPosition(showPosition2);
+        navigator.geolocation.getCurrentPosition(showPosition2, showError2);
     }
 
     function showPosition2(geolocationPositionObject) {
@@ -44,6 +44,9 @@
         "Longitude: " + geolocationPositionObject.coords.longitude.toString() + "<br>" +
         "Timestamp: " + geolocationPositionObject.timestamp.toString() + "<br>";
     }
+
+    function showError2()
+    y.innerHTML = "Hey, you're supposed to give Location Access for this to work properly!"
 
 </script>
 
@@ -74,6 +77,8 @@
     function getLocation4() {
         document.getElementById("demo4").innerHTML = navigator.geolocation.getCurrentPosition(passthrough).coords.latitude.toString();
     }
+
+    /* the passthrough function doesn't seem to work. I think you should just use callback functions like normal people, okay? */
 </script>
 </body>
 </html>
