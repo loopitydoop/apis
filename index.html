@@ -159,12 +159,12 @@
 </script>
 
 
-<p>test 8</p>
+<p>test 9</p>
 <p id="demo8">Latitude will be displayed here</p>
 <button onclick="getAndDisplayLatitude()">Press to display Latitude (using callback functions)</button>
 <script>
+    var latitude
     function getAndDisplayLatitude() {
-        var latitude;
 
         function saveLatitude(position) {
             latitude = position.coords.latitude;
