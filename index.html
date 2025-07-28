@@ -75,7 +75,7 @@
      so that you can add on more properties after the getCurrentPosition() method*/
 
     function getLocation4() {
-        geolocationPositionObject = navigator.geolocation.getCurrentPosition(passthrough)
+        geolocationPositionObject = navigator.geolocation.getCurrentPosition(passthrough);
         document.getElementById("demo4").innerHTML = geolocationPositionObject.coords.latitude;
     }
 
