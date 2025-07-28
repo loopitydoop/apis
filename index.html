@@ -159,11 +159,12 @@
 </script>
 
 
-<p>test 10</p>
+<p>test 11</p>
 <p id="demo8">Latitude will be displayed here</p>
 <button onclick="getAndDisplayLatitude()">Press to display Latitude (using callback functions)</button>
 <script>
     var latitude
+    var isLatitudeWritten
     function getAndDisplayLatitude() {
 
         function saveLatitude(position) {
@@ -174,11 +175,17 @@
             navigator.geolocation.getCurrentPosition(saveLatitude);
             if (latitude === undefined) {
                 document.getElementById("demo8").innerHTML = "no value has been saved to var latitude yet";
+                var isLatitudeWritten = false;
             }
         }
 
         function displayLatitude() {
-            document.getElementById("demo8").innerHTML = latitude;
+            if (isLatitudeWritten === FALSE) {
+                return
+            }
+            else {
+                document.getElementById("demo8").innerHTML = latitude;
+            }
         }
         requestAndSaveLatitude();
         displayLatitude();
