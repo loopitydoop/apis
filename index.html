@@ -64,7 +64,7 @@
 </script>
 
 <p id="demo4"></p>
-<button onclick="getLocation4()">Get Location4</button>
+<button onclick="getLocation4()">Get Location4 test 1</button>
 
 <script>
     function passthrough(input) {
@@ -75,7 +75,8 @@
      so that you can add on more properties after the getCurrentPosition() method*/
 
     function getLocation4() {
-        document.getElementById("demo4").innerHTML = navigator.geolocation.getCurrentPosition(passthrough).coords.latitude.toString();
+        geolocationPositionObject = navigator.geolocation.getCurrentPosition(passthrough)
+        document.getElementById("demo4").innerHTML = geolocationPositionObject.coords.latitude;
     }
 
     /* the passthrough function doesn't seem to work. I think you should just use callback functions like normal people, okay? */
