@@ -136,7 +136,7 @@
     }
 </script>
 
-<p>test5</p>
+<p>test6</p>
 <p id="demo7">test to see what navigator.geolocation.getCurrentPosition() returns</p>
 <button onclick="writeToQux()">Write navigator.geolocation.getCurrentPosition() to a variable</button>
 <button onclick="displayQux()">Display the value of Qux</button>
@@ -144,8 +144,12 @@
     var qux = "default value";
 
     function writeToQux() {
-        document.getElementById("demo7").innerHTML = "navigator.geolocation.getCurrentPosition() has been written to var qux";
-        qux = navigator.geolocation.getCurrentPosition();
+        try {
+            document.getElementById("demo7").innerHTML = "navigator.geolocation.getCurrentPosition() has been written to var qux";
+            qux = navigator.geolocation.getCurrentPosition();
+        } catch (error) {
+            document.getElementById("demo7").innerHTML = error;
+        }
     }
 
     function displayQux() {
