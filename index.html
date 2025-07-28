@@ -157,5 +157,32 @@
         document.getElementById("demo7").innerHTML = qux;
     }
 </script>
+
+
+<p>test 8</p>
+<p id="demo8">Latitude will be displayed here</p>
+<button onclick="getAndDisplayLatitude()">Press to display Latitude (using callback functions)</button>
+<script>
+    function getAndDisplayLatitude() {
+        var latitude;
+
+        function saveLatitude(position) {
+            latitude = position.coords.latitude;
+        }
+
+        function requestAndSaveLatitude() {
+            navigator.geolocation.getCurrentPosition(saveLatitude);
+            if (latitude = undefined) {
+                document.getElementById("demo8").innerHTML = "no value has been saved to var latitude yet";
+            }
+        }
+
+        function displayLatitude() {
+            document.getElementById("demo8").innerHTML = latitude;
+        }
+        requestAndSaveLatitude();
+        displayLatitude();
+    }
+</script>
 </body>
 </html>
