@@ -141,6 +141,8 @@
 <button onclick="writeToQux">Write navigator.geolocation.getCurrentPosition() to a variable</button>
 <button onclick="displayQux">Display the value of Qux</button>
 <script>
+    var qux;
+
     function writeToQux() {
         qux = navigator.geolocation.getCurrentPosition();
         document.getElementById("demo7").innerHTML = "navigator.geolocation.getCurrentPosition() has been written to var qux";
